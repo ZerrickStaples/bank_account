@@ -9,13 +9,18 @@ class BankAccount(object):
     def make_withdrawl(self, amount):
         self.balance -= amount
 
-    def check_balance(self, amount):    
+    def check_balance(self, amount):
         if (self.balance - amount) < 0:
             print("Insufficient funds ")
 
+    def is_positive_balance(self):
+        if self.balance <= 0:
+            print('You do not have a positive balance.')
+
 
 bank_account = BankAccount("Zerrick")
-bank_account.make_deposit(1200)
-bank_account.check_balance(1201)
-#bank_account.make_withdrawl(1201)
-print(bank_account.__dict__)
+bank_account.make_withdrawl(1)
+bank_account.is_positive_balance()
+#bank_account.make_deposit(1200)
+#bank_account.check_balance(1201)
+#bank_account.check_balance(1)
