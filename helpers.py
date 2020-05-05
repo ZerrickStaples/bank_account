@@ -10,9 +10,8 @@ class BankAccount(object):
         self.balance -= amount
 
     def check_balance(self, amount):
-        if (self.balance - amount) < 0:
-            print("Insufficient funds ")
+        return (self.balance - amount) >= 0
 
     def is_positive_balance(self):
-        if self.balance <= 0:
-            print('You do not have a positive balance.')
+        return self.balance > 0
+            
